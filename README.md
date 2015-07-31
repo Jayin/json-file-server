@@ -23,4 +23,4 @@ URL: `[Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnTy
 
 # License 
 
-MIT @[Jayin](http://www.jayinton.com)
+MIT @[Jayin Ton](http://www.jayinton.com)

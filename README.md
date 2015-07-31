@@ -29,9 +29,8 @@ URL: `[Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnTy
   * ReturnType: 返回类型: e.g: `json` & `xml` ,
 * QueryString: QueryString，参数顺序问题值得商讨 
 
-e.g:
 
-url: 
+#### Example
 
 Mock File Name|对应请求方法
 -----|-----

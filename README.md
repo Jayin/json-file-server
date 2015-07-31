@@ -20,14 +20,26 @@ URL: `[Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnTy
 --path
   --blabla
   --to
-    --Resource[.Http_Method|''][.LangPrefix|''][.ReturnType][?QueryString|'']
+    --Resource[.suffix|''][.Http_Method|''][?QueryString|'']
 ```
 
 * Http_Method: Http方法 GET POST PUT DELETE PATCH .....
-* Resource_Id: 资源id，根据你的业务逻辑
-* LangPrefix: 语言占位符 e.g: `php`, `do`, `aspx`
-* ReturnType: 返回类型: e.g: `json`
+* suffix 后缀
+  * LangPrefix: 语言占位符 e.g: `php`, `do`, `aspx`
+  * ReturnType: 返回类型: e.g: `json` & `xml` ,
 * QueryString: QueryString，参数顺序问题值得商讨 
+
+e.g:
+
+url: 
+
+Mock File Name|对应请求方法
+-----|-----
+`/posts/1.php.get?from=index` | `GET /posts/1.php??from=index`
+`/posts.post.json` | `POST /posts.json` 
+`/posts.get` | `GET /posts`
+`/post.php.get`| `GET /post.php`
+`/posts.post`| `POST /posts`
 
 
 # License 

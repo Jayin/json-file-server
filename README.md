@@ -14,6 +14,15 @@
 
 URL: `[Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnType][?QueryString|'']`
 
+对应文件目录结构:
+```
+--...
+--path
+  --blabla
+  --to
+    --Resource[.Http_Method|''][.LangPrefix|''][.ReturnType][?QueryString|'']
+```
+
 * Http_Method: Http方法 GET POST PUT DELETE PATCH .....
 * Resource_Id: 资源id，根据你的业务逻辑
 * LangPrefix: 语言占位符 e.g: `php`, `do`, `aspx`

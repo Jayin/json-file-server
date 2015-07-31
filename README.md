@@ -12,8 +12,7 @@
 
 ### 编写mock file(草案)
 
-url: [Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnType][?QueryString|'']
-e.g
+URL: `[Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnType][?QueryString|'']`
 
 * Http_Method: Http方法 GET POST PUT DELETE PATCH .....
 * Resource_Id: 资源id，根据你的业务逻辑
@@ -22,6 +21,6 @@ e.g
 * QueryString: QueryString，参数顺序问题值得商讨 
 
 
-License 
+# License 
 
 MIT @[Jayin](http://www.jayinton.com)

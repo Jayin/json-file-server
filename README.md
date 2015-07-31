@@ -34,12 +34,13 @@ URL: `[Http_Method] /path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnTy
 
 Mock File Name|对应请求方法
 -----|-----
-`/posts/1.php.get?from=index` | `GET /posts/1.php??from=index`
-`/posts.post.json` | `POST /posts.json` 
+`/posts` | `GET /posts`
 `/posts.get` | `GET /posts`
-`/post.php.get`| `GET /post.php`
 `/posts.post`| `POST /posts`
-
+`/posts.json.post` | `POST /posts.json` 
+`/post.php.get`| `GET /post.php`
+`/posts/1.get?a=1&b=2` | `GET /posts/1??a=1&b=2`
+`/posts/1.json?a=1` | `GET /posts/1.json?a=1`
 
 # License 
 

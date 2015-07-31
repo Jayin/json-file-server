@@ -12,7 +12,7 @@
 
 ### 编写mock file(草案)
 
-URL: `/path/to/Resource[.Http_Method|''][.LangPrefix|''][.ReturnType][?QueryString|'']`
+URL: `/path/to/Resource[.suffix|''][.Http_Method|''][?QueryString|'']`
 
 对应文件目录结构:
 ```

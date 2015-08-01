@@ -5,10 +5,7 @@ var path = require('path')
 
 
 router.all('*', function(req, res, next) {
-    // res.render('index', { title: 'Express' });
-    // console.log(process.cwd())
-    // console.log(path.resolve(process.cwd(), './test'))
-    var base_path = path.resolve(process.cwd(), './test')
+    var base_path = path.resolve(process.cwd(), req.app.get('base_path'))
     var f = req.url + '.' + req.method.toLowerCase()
     if(fs.existsSync(path.join(base_path, f))){
          res.sendFile(path.join(base_path, f))
@@ -26,7 +23,7 @@ router.all('*', function(req, res, next) {
 
     // posible_file.forEach(function(f){
     for(var i=0; i<posible_files.length; i++){
-         var f = posible_file[i]
+         var f = posible_files[i]
          var file_path = path.join(base_path, f)
          if(file_path.indexOf(full_prefix + '?') != -1){
             var ok = true

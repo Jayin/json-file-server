@@ -1,6 +1,6 @@
 # json-file-server
 
-对于前后端完全分离的项目来说，前端只会关心接口，通讯方式一般采用json。所以，理想的状态下就是前端不用直接等待后端完成接口再写逻辑代码，而是直接自己fake一些数据。 
+对于前后端完全分离的项目来说，前端只会关心接口，通讯方式一般采用json。所以，理想的状态下就是前端不用直接等待后端完成接口再写逻辑代码，而是直接自己fake一些数据。
 
 参考过[json-server](https://github.com/typicode/json-server),能满足部分需求，然而在实际的上环境比较复杂,以下这2个需求是我迫切需要:
 
@@ -12,7 +12,7 @@
 
 ### 编写mock file(草案)
 
-URL: `/path/to/Resource[.suffix|''][.Http_Method|''][?QueryString|'']`
+URL: `/path/to/Resource[.suffix|''][.Http_Method][?QueryString|'']`
 
 对应文件目录结构:
 ```
@@ -27,21 +27,20 @@ URL: `/path/to/Resource[.suffix|''][.Http_Method|''][?QueryString|'']`
 * suffix 后缀
   * LangPrefix: 语言占位符 e.g: `php`, `do`, `aspx`
   * ReturnType: 返回类型: e.g: `json` & `xml` ,
-* QueryString: QueryString，参数顺序问题值得商讨 
+* QueryString: QueryString，参数顺序问题值得商讨
 
 
 #### Example
 
 Mock File Name|对应请求方法
 -----|-----
-`/posts` | `GET /posts`
 `/posts.get` | `GET /posts`
 `/posts.post`| `POST /posts`
-`/posts.json.post` | `POST /posts.json` 
+`/posts.json.post` | `POST /posts.json`
 `/post.php.get`| `GET /post.php`
 `/posts/1.get?a=1&b=2` | `GET /posts/1??a=1&b=2`
-`/posts/1.json?a=1` | `GET /posts/1.json?a=1`
+`/posts/1.json.get?a=1` | `GET /posts/1.json?a=1`
 
-# License 
+# License
 
 MIT @[Jayin Ton](http://www.jayinton.com)

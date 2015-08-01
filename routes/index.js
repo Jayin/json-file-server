@@ -6,29 +6,43 @@ var path = require('path')
 
 router.all('*', function(req, res, next) {
     // res.render('index', { title: 'Express' });
-    console.log(process.cwd())
-    console.log(path.resolve(process.cwd(), '../test'))
-    var base_path = path.resolve(process.cwd(), '../test')
-    var posible_file = []
-    posible_file.push(req.url)
-    posible_file.push(req.url + '.' + req.method.toLowerCase())
-    console.log(posible_file)
-    var hasFind = false;
-    for (var i = 0; i < posible_file.length; i++) {
-        var file_path = path.join(base_path, posible_file[i])
-        console.log(file_path)
-        if (fs.existsSync(file_path)) {
-            console.log('exist')
-            hasFind = true
-            res.sendFile(file_path)
-            break
-        } else {
-            console.log('not exist')
-        }
+    // console.log(process.cwd())
+    // console.log(path.resolve(process.cwd(), './test'))
+    var base_path = path.resolve(process.cwd(), './test')
+    var f = req.url + '.' + req.method.toLowerCase()
+    if(fs.existsSync(path.join(base_path, f))){
+         res.sendFile(path.join(base_path, f))
+         return
     }
-    if (!hasFind) {
+    if(req.url.indexOf('?') == -1){
         res.status(404).send('NOT FILE')
+        return
     }
+    // with query string
+    var prefix = req.url.split('?')[0]
+    var full_prefix = prefix + '.' + req.method.toLowerCase()
+    var _dir = req.url.substring(0, prefix.lastIndexOf('/'))
+    var posible_files = fs.readdirSync(path.join(base_path, _dir))
+
+    // posible_file.forEach(function(f){
+    for(var i=0; i<posible_files.length; i++){
+         var f = posible_file[i]
+         var file_path = path.join(base_path, f)
+         if(file_path.indexOf(full_prefix + '?') != -1){
+            var ok = true
+            for(var k in req.query){
+                if(file_path.indexOf(k + '=' + req.query[k]) == -1){
+                    ok = false
+                    break
+                }
+            }
+            if(ok){
+                res.sendFile(file_path)
+                return
+            }
+         }
+    }
+    res.status(404).send('No File')
 });
 
 module.exports = router;

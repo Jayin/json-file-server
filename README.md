@@ -38,7 +38,7 @@ Mock File Name|对应请求方法
 `/posts.post`| `POST /posts`
 `/posts.json.post` | `POST /posts.json`
 `/post.php.get`| `GET /post.php`
-`/posts/1.get?a=1&b=2` | `GET /posts/1??a=1&b=2`
+`/posts/1.get?a=1&b=2` | `GET /posts/1?a=1&b=2`
 `/posts/1.json.get?a=1` | `GET /posts/1.json?a=1`
 
 # License

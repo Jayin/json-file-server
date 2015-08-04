@@ -21,7 +21,6 @@ router.all('*', function(req, res, next) {
     var _dir = req.url.substring(0, prefix.lastIndexOf('/'))
     var posible_files = fs.readdirSync(path.join(base_path, _dir))
 
-    // posible_file.forEach(function(f){
     for(var i=0; i<posible_files.length; i++){
          var f = posible_files[i]
          var file_path = path.join(base_path, f)

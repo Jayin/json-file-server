@@ -41,6 +41,15 @@ Mock File Name|对应请求方法
 `/posts/1.get?a=1&b=2` | `GET /posts/1?a=1&b=2`
 `/posts/1.json.get?a=1` | `GET /posts/1.json?a=1`
 
+
+### Getting Start
+
+```shell
+npm install -g json-file-server
+cd path/to/json-file-server # optionals
+jfs . --port 3000
+```
+
 # License
 
 MIT @[Jayin Ton](http://www.jayinton.com)

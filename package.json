@@ -1,7 +1,6 @@
 {
-  "name": "jfs",
-  "version": "0.0.0",
-  "private": true,
+  "name": "json-file-server",
+  "version": "1.0.0",
   "scripts": {
     "start": "node ./bin/www"
   },

@@ -47,7 +47,8 @@ Mock File Name|对应请求方法
 ```shell
 npm install -g json-file-server
 cd path/to/json-file-server # optionals
-jfs . --port 3000
+jfs run -p 3000 .
+jfs -help
 ```
 
 # License

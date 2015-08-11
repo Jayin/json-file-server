@@ -1,6 +1,6 @@
 {
   "name": "json-file-server",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "repository": "https://github.com/Jayin/json-file-server",
   "license": "MIT",
   "scripts": {
@@ -13,6 +13,7 @@
     "body-parser": "~1.12.0",
     "commander": "^2.8.1",
     "cookie-parser": "~1.3.4",
+    "cors": "^2.7.1",
     "debug": "~2.1.1",
     "express": "~4.12.2",
     "jade": "~1.9.2",

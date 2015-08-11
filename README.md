@@ -1,4 +1,5 @@
 # json-file-server
+[![NPM Version](http://img.shields.io/npm/v/json-file-server.svg?style=flat)](https://www.npmjs.org/package/json-file-server)
 
 对于前后端完全分离的项目来说，前端只会关心接口，通讯方式一般采用json。所以，理想的状态下就是前端不用直接等待后端完成接口再写逻辑代码，而是直接自己fake一些数据。
 

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var argv = require('minimist')(process.argv.slice(2))
 var program = require('commander')
 var app = require('../app')
 var fs = require('fs')
